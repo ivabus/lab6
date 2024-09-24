@@ -50,10 +50,10 @@ public class ProductRepository {
   }
 
   /**
-   * @return коллекция.
+   * @return Отсортированная коллекция
    */
   public Queue<Product> get() {
-    return collection;
+    return new PriorityQueue<>(Comparator.comparingLong(Product::getPrice));
   }
 
   /**
